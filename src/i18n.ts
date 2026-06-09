@@ -18,7 +18,6 @@ const resources = {
       studyProgress: "Study Progress",
       accuracy: "Accuracy Rate",
       solved: "Questions Solved",
-      streak: "Study Streak",
       sessions: "Study Sessions",
       quickAccess: "Quick Study Links",
       countdownEnded: "Exam night is here!",
@@ -62,7 +61,6 @@ const resources = {
       onboardingTitle: "Welcome, Network Engineer!",
       onboardingDesc: "This ultimate exam-night companion helps you master Computer Networks Fundamentals with summaries, 3D cards, terms, and real exams. Capable of working entirely offline.",
       closeOnboarding: "Let's Start",
-      studyStreakDesc: "Keep studying daily to maintain your streak!",
       sessionTimer: "Current Session: ",
       secondsUnit: "s",
     }
@@ -82,7 +80,6 @@ const resources = {
       studyProgress: "التقدم الدراسي",
       accuracy: "نسبة الدقة",
       solved: "الأسئلة المحلولة",
-      streak: "سلسلة الأيام المتتالية",
       sessions: "جلسات المذاكرة",
       quickAccess: "روابط المذاكرة السريعة",
       countdownEnded: "حان وقت الامتحان الآن!",
@@ -126,7 +123,6 @@ const resources = {
       onboardingTitle: "مرحباً بك يا مهندس المستقبل!",
       onboardingDesc: "هذه المنصة هي رفيقك الأمثل ليلة الامتحان لمراجعة أساسيات شبكات الحاسب من ملخصات وبطاقات تفاعلية وقاموس مصطلحات وامتحانات سابقة. تدعم التشغيل الكامل بدون إنترنت.",
       closeOnboarding: "دعنا نبدأ",
-      studyStreakDesc: "استمر في المذاكرة يومياً للحفاظ على سلسلتك متصلة!",
       sessionTimer: "جلسة المذاكرة الحالية: ",
       secondsUnit: "ثانية",
     }

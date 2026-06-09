@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { Calendar, Award, CheckCircle, Clock, Flame, BookOpen, Layers, HelpCircle, Activity } from 'lucide-react';
+import { Calendar, Award, CheckCircle, Clock, BookOpen, Layers, HelpCircle, Activity } from 'lucide-react';
 
 interface DashboardViewProps {
   onNavigate: (tab: string) => void;
@@ -42,7 +42,6 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ onNavigate }) => {
     const solved = parseInt(localStorage.getItem('solved_questions') || '0', 10);
     const correct = parseInt(localStorage.getItem('correct_answers') || '0', 10);
     const wrong = parseInt(localStorage.getItem('wrong_answers') || '0', 10);
-    const streak = parseInt(localStorage.getItem('study_streak') || '1', 10);
     const sessions = parseInt(localStorage.getItem('study_sessions') || '1', 10);
     
     const accuracy = solved > 0 ? Math.round((correct / solved) * 100) : 0;
@@ -52,7 +51,6 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ onNavigate }) => {
       correct,
       wrong,
       accuracy,
-      streak,
       sessions,
       sessionSeconds: 0
     };
@@ -164,7 +162,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ onNavigate }) => {
           )}
         </motion.div>
 
-        {/* Right column - Study Streak & Progress Ring */}
+        {/* Right column - Progress Ring */}
         <motion.div 
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
@@ -172,15 +170,15 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ onNavigate }) => {
           className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-md flex flex-col justify-between"
         >
           <div>
-            <span className="text-xs font-mono uppercase tracking-wider text-amber-500 font-bold flex items-center gap-1.5 mb-3">
-              <Flame className="h-4 w-4 animate-bounce" />
-              {t('streak')}
+            <span className="text-xs font-mono uppercase tracking-wider text-teal-500 font-bold flex items-center gap-1.5 mb-3">
+              <Activity className="h-4 w-4" />
+              {isRtl ? "التقدم العام في المنهج" : "Syllabus Progress"}
             </span>
             <h2 className="text-lg font-bold text-slate-900 dark:text-white">
-              {stats.streak} {isRtl ? "أيام متتالية" : "Days Streak"}
+              {isRtl ? "معدل الإنجاز الدراسي" : "Study Completion Rate"}
             </h2>
             <p className="text-slate-500 dark:text-slate-400 text-xs mt-1 leading-relaxed">
-              {t('studyStreakDesc')}
+              {isRtl ? "تتبع نسبة الأسئلة التي قمت بحلها من إجمالي بنك الأسئلة للمقرر." : "Track the percentage of questions solved from the course test bank."}
             </p>
           </div>
 
